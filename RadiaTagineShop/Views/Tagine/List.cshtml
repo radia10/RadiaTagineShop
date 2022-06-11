@@ -1,0 +1,16 @@
+﻿
+@model TaginesListViewModel
+
+    
+    <h1>@Model.CurrentCategory</h1>
+    @foreach(var tagine in Model.Tagines)
+    {
+       <partial name="_TagineCard" model="tagine"></partial>
+    }
+    
+
+
+
+
+    
+   
