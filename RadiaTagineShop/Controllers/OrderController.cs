@@ -4,7 +4,7 @@ using RadiaTagineShop.Models;
 
 namespace RadiaTagineShop.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;
