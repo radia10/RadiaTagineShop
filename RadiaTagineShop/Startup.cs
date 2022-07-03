@@ -28,8 +28,9 @@ namespace RadiaTagineShop
         {
             services.AddDbContextPool<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                
                 });
-
+            
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ITagineRepository, TagineRepository>();
@@ -42,6 +43,7 @@ namespace RadiaTagineShop
             services.AddSession();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthentication().AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +64,7 @@ namespace RadiaTagineShop
             app.UseSession();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

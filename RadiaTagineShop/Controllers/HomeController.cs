@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RadiaTagineShop.Models;
 using RadiaTagineShop.ViewModels;
 
 namespace RadiaTagineShop.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 
